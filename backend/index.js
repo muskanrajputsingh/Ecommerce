@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(express.json());
 
 // Use authJwt as middleware
-// app.use(authJwt());
+app.use(authJwt());
 
 // Routes
 const categoryRoutes = require('./routes/category');
