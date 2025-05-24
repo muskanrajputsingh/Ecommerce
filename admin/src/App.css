@@ -1,0 +1,117 @@
+body{
+  background: #f1f1f1;
+}
+
+.MuiBadge-badge{
+  background-color:red !important;
+}
+
+.ReactCollapse--collapse{
+  transition:height 300ms;
+}
+
+.btn-blue{
+  background: #3872fa !important;
+  color:white !important;
+  padding:8px 20px !important;
+}
+.btn-blue:hover{
+  background: #1d4093 !important;
+}
+
+.btn-red{
+  background: #de402f !important;
+  color:white !important;
+  padding:8px 20px !important;
+}
+.btn-red:hover{
+  background: #a81606 !important;
+}
+
+.btn-green{
+  background: #0dac5a !important;
+  color:white !important;
+  padding:8px 20px !important;
+}
+.btn-green:hover{
+  background: #397c28 !important;
+}
+
+.MuiButton-icon svg{
+  font-size:27px !important;
+}
+.css-rizt0-MuiTypography-root{
+  font-size:14px !important;
+}
+
+.btn-sm{
+  padding: 6px 20px !important;
+  font-size: 13px !important;
+}
+.btn-lg{
+  padding: 8px 20px !important;
+  font-size: 16px !important;
+}
+
+.MuiAppBar-colorPrimary{
+  background:#e6e6e6 !important;
+}
+
+.MuiSelect-select{
+  background:#fff !important;
+}
+.editModal .css-10d30g3-MuiPaper-root-MuiDialog-paper{
+ width:700px !important;
+ max-width: 800px !important;
+}
+
+button .loader{
+  width: 25px !important;
+  height: 25px !important;
+}
+
+.topLoadingBar{
+  height: 8px !important;
+  background-color: #1d4093 !important;
+}
+
+.imgGrid{
+  width:100%;
+  flex-wrap: wrap;
+  gap: 10px;
+  position: sticky;
+  top:100px;
+}
+
+.imgGrid .img{
+  width:48%;
+  overflow: hidden;
+  border-radius:7px;
+  height:100px;
+}
+
+.imgGrid .img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.text-capitalize{
+  text-transform: uppercase;
+}
+.removee{
+  position: absolute;
+  background-color: red;
+  color: rgb(247, 246, 246);
+  top:5px;
+  right:10px;
+  border-radius: 50px;
+  cursor: pointer;
+  height:19px;
+  width: 20px;
+}
+.img{
+  position: relative !important;
+}
+.ab-img{
+margin: auto;
+}

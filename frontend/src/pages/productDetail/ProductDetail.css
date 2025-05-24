@@ -1,0 +1,158 @@
+.section{
+    padding:45px 0px;
+}
+.productDetails .hd{
+    font-size:25px;
+}
+.productDetails .oldPrice{
+    font-size:15px;
+}
+.productDetails .netPrice{
+    font-size:19px;
+}
+.cartt button{
+    width:100%;
+}
+.productsize{
+    width:100%;
+    height: auto;
+    padding:25px 0px;
+}
+.productsize ul li{
+    margin-right:10px;
+}
+.productsize ul li a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:10px 20px;
+    border:1px solid rgba(0,0,0,0.1);
+    border-radius:5px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-size:16px;
+    transition:all 0.1s ease-in-out;
+}
+.productsize ul li a.active{
+    background: #3bb77e;
+    color:white;
+}
+
+.productsize ul.error li a{
+    border: 1px solid red;
+}
+
+.productDetails .btn-circle{
+    min-width:40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #edeef5;
+    border: 1px solid rgba(0,0,0,0.1);
+    color: black;
+    padding: 5px !important;
+}
+
+.productDetails .btn-circle svg{
+    color: #000;
+    opacity:0.8;
+}
+.productDetails .btn-circle:hover{
+    background: #ccc !important;
+}
+.qt-btn button:hover{
+    background: #ccc !important;
+}
+.productDetails .list li a:hover{
+background-color:#f91f59;
+}
+
+.card{
+    border-radius: 10px;
+}
+.detailsPageTabs{
+ border-radius: 25px;
+}
+.customTabs ul li{
+    margin-right: 30px;
+}
+.⁠customTabs ul li button{
+    padding: 10px 25px important;
+    border: 2px solid #3bb77e !important;
+    border-radius:30px;
+    outline: none;
+}
+.customTabs ul li button.active{
+    color: #3bb77e !important;
+    border: 2px solid #3bb77e !important;
+}
+.customTabs ul li button:hover{
+    color: white !important;
+}
+.customTabs ul li button{
+    color: #f91f59;
+}
+.customTabs ul li button:hover{
+    background-color: #3bb77e;
+    border: 2px solid #3bb77e;
+}
+.customTabs ul li button:focus{
+    border: 2px solid #3bb77e !important;
+}
+.reviewsCard{margin-bottom: 25px !important;}
+.reviewsCard .image{width: 100px;}
+
+.reviewsCard .image{
+    width:100px;
+}
+.reviewsCard .rounded-circle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+}
+.reviewsCard .rounded-circle img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.reviewsCard .info{
+    width:85%;
+}
+
+.reviewForm .form-group{
+    margin-bottom:25px;
+}
+.reviewForm .form-group .form-control{
+    height:80px;
+    font-size: 20px;
+    border-radius:7px;
+    padding-left: 20px;
+}
+.reviewForm .form-group textarea.form-control{
+    height: 200px;
+    padding-top:25px;
+}
+.progressBarBox{
+    margin-bottom: 10px;
+}
+.progress-bar{
+    font-size: 16px;
+}
+.rname input{
+    padding:10px;
+    width:300px;
+    border-radius:4px;
+}
+.rbtn button{
+    cursor: pointer;
+    color: #fbf7f7;
+    background-color: #f91f59;
+    border: none;
+}
+.rbtn button:hover{
+    scale: 1.02;
+}

@@ -1,0 +1,63 @@
+.newsSection{
+    width:100%;
+    height: 400px;
+    background:#d3b69f;
+    align-items: center !important;
+    position: relative;
+    overflow: hidden;
+}
+.newsSection .col-md-6{
+    position: static;
+}
+
+.newsSection p {
+    font-size:18px;
+    margin:10px 0px;
+}
+.newsSection h3{
+    font-size:30px;
+    font-weight:bold;
+}
+.newsSection p.text-light{
+    color:#fff;
+    opacity:0.5;
+    font-size:15px;
+}
+.newsSection img{
+    height: 400px;
+}
+.newsSection form{
+    width:100%;
+    height:60px;
+    background: #e9e7e7;
+    padding: 10px;
+    position: relative;
+    border-radius: 5px;
+}
+.newsSection form svg{
+    position: absolute;
+    top:14px;
+    left:10px;
+    font-size: 25px;
+}
+.newsSection form input{
+    width:100%;
+    height:100%;
+    background:#e7e6e6;
+    outline:none;
+    border:0px;
+    padding-left:50px;
+    padding-right:200px;
+}
+.newsSection form button{
+    position: absolute;
+    top:6px;
+    right:10px;
+    background: #d3b69f;
+    font-size:14px;
+    padding:10px 25px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 600;
+    text-transform: capitalize;
+}

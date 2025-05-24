@@ -1,0 +1,174 @@
+.productModal .MuiPaper-elevation{
+    padding: 25px;
+    position: relative;
+    max-width:900px;
+    width:900px;
+}
+
+.productModal h4{
+    font-size:22px;
+}
+.productModal h4{
+    font-size:20px;
+    color:rgba(0,0,0,0.8);
+}
+.productZoom{
+    width: 100%;
+    height: auto;
+    padding: 0px;
+    overflow:hidden;
+    border-radius: 15px;
+}
+.zoomSliderBig{
+    width:100%;
+}
+.zoomSlider{
+    padding-top:30px;
+}
+.zoomSlider .slick-slide{
+    padding-right: 20px;
+}
+.zoomSlider *{
+    outline: none;
+}
+.zoomSlider .item{
+    border: 2px solid transparent;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.zoomSlider .slick-current .item{
+    border:2px solid #3bb77e;
+}
+.zoomSlider .slick-arrow{
+    top: 55%;
+    zoom: 80%;
+}
+.zoomSlider .slick-arrow.slick-next{
+    right: -2%;
+}
+.zoomSlider .slick-arrow.slick-prev{
+    right: -5%;
+}
+.modalContent ._close button{
+    position: absolute;
+    top:10px;
+    left:10%;
+}
+.info .oldPrice.lg{
+    font-size:20px
+}
+.info .oldPrice{
+    text-decoration:line-through;
+    color: rgb(175, 175, 175);
+}
+.info .netPrice{
+    font-size:16px;
+    font-weight: bold;
+}
+.info .netPrice.lg{
+    font-size: 20px;
+}
+.badge{
+    display: inline-block;
+    padding: 8px 10px;
+}
+.badge.bg-success{
+    background: #e5f8ed !important;
+    color:#16b858;
+}
+.btn-blue{
+    background: #f9205a;
+    color:#fff;
+    text-transform: capitalize;
+    border: 0;
+    outline: none;
+}
+.btn-blue:hover{
+    background: #f50243;
+    border: 0;
+    outline: none;
+    color:rgb(220, 220, 217);
+}
+.btn-big{
+    font-size:13px !important;
+    padding: 8px 40px !important;
+    cursor: pointer;
+}
+.btn-round{
+    border-radius:30px !important;
+}
+
+/* //quantity */
+.quantityDrop{
+    width:150px;
+    gap:10px;
+}
+.quantityDrop button{
+    min-width:40px;
+    width: 40px;
+    height:40px;
+    border-radius: 50%;
+    background: #edeef5;
+    color: #000;
+}
+.quantityDrop button svg{
+    color: black;
+}
+.quantityDrop input{
+    width:30px;
+    border: 0px;
+    background: transparent;
+    outline: none;
+    text-align: center;
+}
+.btn-sml{
+    font-size:12px;
+    text-transform: capitalize;
+}
+.btn-sml svg{
+    font-size:20px;
+}
+.productModal .actions button{
+    color:#000;
+    border:1px solid rgba(0,0,0,0.1);
+    font-size: 10px;
+}
+.productModal .actions button svg{
+    font-size: 15px;
+}
+.btn-wish button{
+    padding:7px 20px;
+    background:transparent;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    width:100%;
+}
+.productZoom .badge{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+}
+.modalContent .btn-close button{
+    position: absolute;
+    right:5%;
+    font-size:20px;
+    font-weight:800;
+    color: black;
+}
+.modal {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s;
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+.productItem .actions {
+    right: 10px !important;
+    opacity: 1 !important;
+}

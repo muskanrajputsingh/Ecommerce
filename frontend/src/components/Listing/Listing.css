@@ -1,0 +1,94 @@
+.product_listing_page .productlisting{
+    gap:20px;
+}
+.product_listing_page .productlisting .sidebar{
+    width:30%;
+    flex:0 0 20%;
+}
+.product_listing_page .productlisting .content_right{
+    width:77% !important;
+    flex:0 0 77%;
+    padding-left:35px ;
+}
+.product_listing_page{
+    padding:45px 0px;
+}
+.showby{
+    width:100%;
+    height: 43px !important;
+    background: #edeff7;
+    padding:15px 25px;
+    height: auto;
+}
+.content_right img{
+    width:100%;
+    height:205px;
+}
+.content_right .showby .btnwrapper button{
+  min-width:30px;
+  height:35px;
+  width:35px;
+  border-radius:50%;
+  color: black;
+}
+.content_right .showby .btnwrapper button svg{
+    font-size:18px;
+    opacity:0.7;
+}
+.content_right .showby .btnwrapper button:hover svg{
+    opacity:1;
+}
+.showbyfilter button{
+    min-width:auto;
+    color:black;
+}
+.showbyfilter button svg{
+    color:black;
+    opacity:0.6;
+    margin-left: 5px;
+}
+.showbyfilter button{
+    border:0;
+    outline: none;
+}
+.showbyfilter button:hover{
+    border:0;
+    outline: none;
+}
+.content_right button{
+    border:0;
+    outline: none;
+}
+.showPerPageDropdown .MuiPaper-root{
+ width:80px !important;
+}
+
+.productlisting{
+    display:flex !important; 
+    gap:20px;
+    flex-wrap:wrap;
+}
+.productlisting .productItem.four{
+    width:23% !important;
+    overflow: hidden;
+}
+.productlisting .productItem.three{
+    width:31.5% !important;
+    overflow: hidden;
+}
+.productlisting .productItem.one{
+    width:100% !important;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    height:300px;
+}
+
+.productlisting .productItem.one .imgwrapper{
+    width:30%;
+    padding-right:60px;
+    position: relative;
+}
+.content_right .showby .btnwrapper button.act svg{
+    color: green !important;
+}

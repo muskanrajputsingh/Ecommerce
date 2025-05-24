@@ -1,0 +1,159 @@
+.allCatTab{
+    background-color: rgb(222, 159, 82);
+    padding: 10px 30px !important;
+    border-radius: 30px !important;
+    color: white;
+    text-align: center;
+}
+.allCatTab:hover{
+    background-color:black;
+    font-weight: 600;
+    cursor: pointer;
+}
+.allCatTab .icon1 svg{
+    font-size:20px;
+}
+.allCatTab .icon2 svg{
+    font-size:15px !important;
+}
+
+.navPart1 .catWrapper{
+    position: relative;
+}
+.navPart1 .catWrapper .sidebarNav {
+    width: 100%;
+    background: white;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    height: 0;
+    opacity: 0;
+    transition: all 0.1s ease-in-out;
+    visibility: hidden;
+    overflow: hidden; /* Ensures no overflowing content */
+    z-index:100;
+  }
+  
+  .navPart1 .catWrapper .sidebarNav.open {
+    height: auto;
+    opacity: 1;
+    visibility:inherit;
+  }
+  
+
+.navPart1 .catWrapper .sidebarNav ul li:hover {
+    background-color:rgb(222, 159, 82) !important;
+}
+.navPart1 .catWrapper .sidebarNav ul li a{
+    text-decoration: none;
+    list-style: none;
+}
+.navPart1 .catWrapper .sidebarNav ul {
+    padding: 0;
+    margin: 0;
+  }
+  .navPart1 .catWrapper .sidebarNav ul li button{
+    width: 100%;
+    justify-content: flex-start;
+    text-transform: capitalize !important;
+  }
+  .navPart1 .catWrapper .sidebarNav ul li {
+    list-style: none;
+    padding: 3px 15px;
+    position:static; /* Ensure each li is the parent of its submenu */
+  }
+  .navPart1 .catWrapper .sidebarNav ul li:hover .submenuu button{
+    border-radius: 0px !important;
+  }
+  .navPart1 .catWrapper .sidebarNav ul svg{
+    font-size: 14px;
+    opacity:0.6;
+  }
+  .navPart1 .catWrapper .sidebarNav ul li .submenuu {
+    position: absolute;
+    top: 0; /* Align with the top of the parent li */
+    left: 100%; /* Position it to the right of the parent li */
+    width: 250px;
+    /* height:300px; */
+    background-color: white;
+    z-index: 100; /* Ensure it appears above other content */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease-in-out;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display:flex;
+    flex-direction: column;
+    padding:10px 0;
+  }
+  
+  .navPart1 .catWrapper .sidebarNav ul li:hover .submenuu {
+    opacity: 1;
+    visibility: visible;
+    left: 100%; /* Ensure it is fully visible */
+    padding: 20px;
+    text-transform: uppercase !important;
+    height: 140% !important;
+  }
+  
+  .navPart1 .catWrapper .sidebarNav {
+    overflow: visible; /* Allow submenus to extend outside the container */
+  }
+
+.navPart2 ul li a{
+    font-size: 16px;
+    font-weight:600;
+    text-decoration: none;
+    color:rgba(0.0,0,0,0.6);
+    font-family:"Montserrat", sans-serif;
+    text-transform:uppercase;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    transition:all 0.1s ease-in-out;
+}
+.navPart2 ul li a:hover{
+    background:#cececd;
+    color:rgb(222, 159, 82);
+}
+.navPart2 ul li{
+    position: relative;
+}
+.navPart2 ul li .submenu{
+    position: absolute;
+    top: 120%;
+    left: 0px;
+    min-width:200px;
+    background-color:white;
+    opacity:0;
+    visibility: hidden;
+    transition: all 0.2s ease-in-out;
+    z-index:100;
+}
+.navPart2 ul li .submenu a{
+    display:block;
+    width:100%;
+}
+.navPart2 ul li .submenu a{
+    width:100%;
+    justify-content: flex-start !important;
+    border-radius:0px !important;
+}
+.navPart2 ul li:hover .submenu{
+    opacity:1;
+    visibility: inherit;
+    top: 100%;
+}
+.navPart2 ul li .submenu a:hover{
+    background-color:rgb(222, 159, 82);
+}
+
+.swiper {
+  min-width: 100%;
+}
+.swiper-slide {
+  flex: 0 0 auto;
+}
+

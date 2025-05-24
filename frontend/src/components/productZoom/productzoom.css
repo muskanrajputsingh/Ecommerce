@@ -1,0 +1,27 @@
+
+.zoomSliderBig .item img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important; /* Ensures full image is visible */
+    image-rendering: auto; /* Improves clarity */
+}
+.zoomSliderBig {
+    position: relative;
+    width: 300px; /* Match width */
+    height: 400px; /* Match height */
+    overflow: hidden; /* Ensures zoomed image doesn't go outside */
+    object-fit: contain !important;
+}
+
+.zoomSliderBig .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.zoomedImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

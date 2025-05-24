@@ -1,0 +1,12 @@
+.slider-container {
+    width: 100vw;
+    height: 500px;
+    overflow: hidden;
+  }
+  
+  .slick-slide img {
+    width: 100vw;
+    height:500px;
+    object-fit: cover;
+  }
+  

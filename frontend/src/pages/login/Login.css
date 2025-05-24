@@ -1,0 +1,68 @@
+.signin-container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("https://source.unsplash.com/1600x900/?fashion,clothing") no-repeat center center/cover;
+  }
+  
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  }
+  
+  .sign-in-card {
+    position: relative;
+    max-width:500px;
+    width: 100%;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .sign-in-card img{
+    height:50px;
+    width:120px;
+  }
+  .google-signin-btn {
+    background-color: white;
+    color: black;
+    width: 200px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid black;
+    cursor: pointer;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content:center !important;
+    gap: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .google-signin-btn:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  .google-signin-btn a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .google-signin-btn:hover a {
+    color: white !important;
+  }
+  
+  .google-icon {
+    font-size: 20px;
+  }
+  .btn-part{
+    width:46%;
+    margin: auto !important;
+  }

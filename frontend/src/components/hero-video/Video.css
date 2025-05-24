@@ -1,0 +1,24 @@
+.vid {
+    position: relative; /* Required for absolute positioning of .overlay */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.vid video {
+    width: 100%;
+    height:530px; /* Fixed height */
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ensure it covers the entire video */
+    background: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+}

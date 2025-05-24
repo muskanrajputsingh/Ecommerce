@@ -1,0 +1,265 @@
+.homeProducts{
+  padding:25px 0px;
+  width:100%;
+}
+.cursor{
+    cursor: pointer;
+}
+.info p{
+    color: #979595;
+}
+.homeProducts .banner{
+    width:100%;
+    border-radius:7px;
+    overflow: hidden;
+}
+.text-sml{
+ font-size: 14px;
+}
+.productRow .hd{
+    font-size: 25px;
+}
+.viewAll{
+    padding:8px 25px !important;
+    background-color:#fff;
+    border:1px solid rgba(0,0,0,0.1);
+    border-radius:30px;
+    color:#000;
+    font-weight:600;
+    text-transform: capitalize;
+}
+.productItem{
+    width:100%;
+    height:440px; 
+    /* before height was auto */
+    border:1px solid rgba(0,0,0,0.1);
+}
+.product_row {
+    width: 100%;
+    overflow: hidden;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: rgb(7, 6, 6); /* Set arrow color to red */
+}
+
+/* Optional: Add hover effect */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: rgb(250, 248, 248); /* Darker red on hover */
+}
+
+/* Adjust size (optional) */
+.swiper-button-next,
+.swiper-button-prev {
+  font-size: 20px; /* Adjust size if needed */
+}
+
+/* /////////// */
+.productItem {
+  border: 1px solid rgb(181, 180, 180); 
+  border-radius: 5px; 
+  padding:5px 7px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  background-color: white; 
+  cursor: pointer;
+  position: relative;
+}
+
+.productItem .badge{
+    display: inline-block;
+    padding: 7px 10px;
+    position: absolute;
+    top:6px;
+    left:6px;
+    z-index:100;
+}
+
+.productItem h4 {
+  margin: 10px 0 5px; /* Spacing around the title */
+  font-size: 16px; /* Font size for the title */
+  color: black; /* Text color */
+  font-weight: 600;
+}
+.productItem span{
+    font-size:13px;
+}
+.productItem .info .oldPrice{
+    font-size:14px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.4);
+    text-decoration: line-through;
+}
+.productItem .info .netPrice{
+    font-size:14px;
+    font-weight: bold;
+}
+
+.productItem .actions{
+    position: absolute;
+    top: 10px;
+    right:-100%;
+    z-index:100;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    transition:all 0.3s ease-in-out ;
+}
+.productItem .actions button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width:40px;
+    height:40px;
+    width:40px;
+    border:1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    background:rgb(240, 239, 239);
+    box-shadow:0px 1px 3px rgb(0 0 0 /12%),0 1px 2px rgb(0 0 0 /24%) !important;
+}
+.productItem .actions button svg{
+    color: #000;
+    opacity: 0.8;
+    pointer-events:none;
+    font-size:15px;
+}
+.productItem .actions button:hover{
+    background-color:#75a254;
+}
+.productItem .actions button:hover svg{
+    color:#fcfcff;
+}
+
+.productItem .imgwrapper{
+    overflow: hidden !important;
+}
+.productItem .imgwrapper:hover .actions{
+    opacity:1;
+    right:10px;
+}
+.productItem .imgwrapper img{
+    transition: all 0.3s ease-in-out;
+}
+/* .productItem .imgwrapper:hover img{
+    transform: scale(1.000023);
+} */
+ 
+/* .productRow2{
+    flex-wrap: wrap;
+    gap:10px;
+} */
+.productRow2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.productRow2 > * {
+    flex: 1 1 calc(33.33% - 10px); /* Each card takes 1/3 width minus the gap */
+    max-width: calc(33.33% - 10px); /* Prevents cards from exceeding 1/3 width */
+}
+@media (max-width: 992px) {  /* Tablet */
+    .productRow2 > * {
+        flex: 1 1 calc(50% - 10px); /* 2 per row */
+        max-width: calc(50% - 10px);
+        height:400px;
+    }
+}
+
+@media (max-width: 768px) {  /* Mobile */
+    .productRow2 > * {
+        flex: 1 1 100%; /* 1 per row */
+        max-width: 100%;
+        height:300px;
+    }
+}
+.productRow2 .productItem{
+    /* width:24%; */
+    overflow: hidden;
+    border-right:1px solid rgba(0, 0, 0, 0.1);
+}
+
+.bannerSec{
+    gap:15px;
+}
+
+.sticky{
+    position: sticky;
+    top: 10px;
+    z-index:100;
+}
+.badge {
+    
+    background-color: rgb(190, 227, 151);
+}
+  .imgwrapper, .info {
+    min-width: 100px; /* Adjust as needed */
+}
+
+
+/* //carditem dot */
+
+/* Fixing Dots Visibility */
+.slick-dots {
+    position: absolute;
+    bottom: 10px !important;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+  }
+  
+  .slick-dots li {
+    margin: 0 5px;
+  }
+  
+  .slick-dots li button:before {
+    font-size: 12px;
+    color: white !important;
+    opacity: 0.75;
+  }
+  
+  .slick-dots li.slick-active button:before {
+    color: #f14e26 !important; /* Highlight active dot */
+    opacity: 1;
+  }
+  
+  /* Make sure the slider is visible */
+  .slick-slider {
+    width: 100%;
+    height: auto;
+  }
+  .imgwrapper img{
+    height: 300px !important;
+  }
+  
+  /* tabs */
+
+ /* Parent container to prevent overflow */
+.filterTab {
+    display: flex;
+    max-width: 100%;
+    overflow-x: auto; /* Enable scrolling */
+    white-space: nowrap;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+  }
+  
+  /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+  .filterTab::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Tab container */
+  .filterTab .MuiTabs-flexContainer {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px; /* Space between categories */
+    scrollbar-width: none; /* Hide scrollbar */
+  }
+  
+  /* Hide scrollbar for WebKit browsers inside Tabs */
+  .filterTab .MuiTabs-flexContainer::-webkit-scrollbar {
+    display: none;
+  }
+  

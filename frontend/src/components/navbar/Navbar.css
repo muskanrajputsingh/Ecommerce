@@ -1,0 +1,207 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.nav-box1{
+height:42px;
+width:100%;
+background-color:rgb(237, 220, 208);
+color:black;
+display:flex;
+justify-content: space-between;
+align-items:center;
+padding:0 30px;
+}
+.nav-logo img{
+  height:90px;
+  width:180px;
+}
+.slogan h5{
+    font-size:16px;
+    font-weight: bold;
+    padding-top:5px;
+    color: #464545;
+}
+  
+  .nav-box2 {
+    height: 60px;
+    width: 100%;
+    background-color:rgb(253, 250, 245);
+    color: rgb(18, 14, 14);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .nav-left {
+    display: flex;
+    flex-grow: 1;
+  }
+  
+  .nav-left ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-left li {
+    position: relative;
+    margin-right: 20px;
+  }
+  
+  .nav-left .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #eae8e7;
+    min-width: 160px;
+    z-index: 1;
+    transition: all .1s ease-in-out;
+    z-index:999999;
+  }
+  
+  .nav-left .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .nav-left .dropdown-content a {
+    color: rgb(95, 94, 94);
+    border-bottom:1px solid rgb(222, 220, 220);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .nav-left .dropdown-content a:hover {
+    background-color:rgb(222, 159, 82);
+  }
+  
+  /* Ensure links in nav-right are also white */
+  .nav-right a {
+    color: rgb(8, 7, 7);
+    text-decoration: none;
+  }
+  .nav-left a:hover {
+    color: rgb(230, 67, 62);
+    text-decoration: none;
+  }
+
+  /* Ensure all links in nav-left are white */
+.nav-left a {
+    color: rgb(9, 8, 8);
+    text-decoration: none;
+  }
+  
+  .nav-left a:hover {
+    color:rgb(81, 122, 179); /* Hover color for links in nav-left */
+    text-decoration: none;
+  }
+  
+  .search-container {
+    flex-grow: 2;
+    text-align: center;
+    position: relative;
+  }
+  
+  .search-container input {
+    width: 90%;
+    padding: 8px;
+    font-size: 14px;
+    border:none;
+    background:rgb(225, 224, 224);
+    border-radius: 4px;
+  }
+  
+  .search-container .search-icon {
+    position: absolute;
+    right: 8%; /* Position search icon within the input box */
+    top: 50%;
+    transform: translateY(-50%);
+    color: black; /* Search icon color */
+    font-size: 18px;
+  }
+  
+  .nav-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-right .icon {
+    margin-left:0px;
+    font-size: 18px;
+    color: rgb(16, 16, 16);
+    text-decoration: none;
+  }
+  
+  .nav-right .icon:hover {
+    color: #f5b253; /* Hover color for icons in nav-right */
+  }
+  
+  .nav-right a {
+    color: rgb(16, 16, 16);
+    text-decoration: none;
+  }
+  
+  /* Additional styling for cart and other icons */
+  .cart-icon-wrapper {
+    position: relative;
+  }
+  
+  .cart-notification {
+    position: absolute;
+    top: -5px; /* Adjust circle position above the icon */
+    right: -5px;
+    background-color:red; /* Circle background color */
+    color: white;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .slogan {
+    display: flex;
+    justify-content: center !important;
+    gap: 15px;
+    align-items: center !important;
+  }
+  
+  .slogan button {
+    background-color: #070707;
+    color: white;
+    width: 100px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    height: 33px;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .slogan button a {
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .slogan button:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+  }
+  
+  .slogan button:hover a {
+    color: black !important;
+  }
+  
