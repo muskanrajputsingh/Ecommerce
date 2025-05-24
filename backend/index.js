@@ -6,7 +6,7 @@ require('dotenv/config');
 require('./db/conection');
 
 // Import JWT middleware function
-const authJwt = require('./helper/jwt');
+// const authJwt = require('./helper/jwt');
 
 app.use(cors());
 app.options('*', cors());
@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(express.json());
 
 // Use authJwt as middleware
-app.use(authJwt());
+// app.use(authJwt());
 
 // Routes
 const categoryRoutes = require('./routes/category');
