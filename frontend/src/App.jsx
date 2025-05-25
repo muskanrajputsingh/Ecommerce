@@ -14,6 +14,7 @@ import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 import { postData } from "./utils/api";
 import Search from "./components/search/Search";
+import Checkout from "./pages/checkout/Checkout";
 
 const MyContext = createContext();
 
@@ -207,6 +208,7 @@ const Layout = () => {
         <Route path="/register" exact element={<Register />} />
         <Route path="/login" exact element={<Login />} />
         <Route path="/search" exact element={<Search/>} />
+        <Route path="/checkout" exact element={<Checkout/>} />
       </Routes>
       {!hideHeaderFooter && <Footer />}
     </>

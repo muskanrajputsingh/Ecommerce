@@ -112,7 +112,7 @@ const Listing = () => {
                                                 <CardItem itemView={ProductView} key={index} item={item} />
                                             ))
                                         ) : (
-                                            <p className="no-products">No products available.</p>
+                                            <p className="no-products text-danger text-center py-3">No products available.</p>
                                         )}
                                     </div>
 

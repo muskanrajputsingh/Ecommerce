@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Rating from '@mui/material/Rating';
 import Qunatity from "../../components/qunatityBox/Qunatity";
 import { MyContext } from "../../App";
+import { FaShoppingCart } from "react-icons/fa";
 import { deleteData, editData, fetchDataFromApi } from "../../utils/api";
 
 const Cart = () => {
@@ -79,48 +80,6 @@ const Cart = () => {
     }
   };
 
-  // const selectedItem = (item, quantityVal) => {
-  //   if (quantityVal !== 0) {
-  //     setIsLoading(true);
-  //     const user = JSON.parse(localStorage.getItem("user"));
-  
-  //     const updatedCartFields = {
-  //       productTitle: item?.name || item?.productTitle || "Unknown Product",
-  //       image: item?.image || "",
-  //       rating: item?.rating ?? 0,
-  //       price: item?.price ?? 0,
-  //       quantity: quantityVal ?? 1,
-  //       subTotal: parseInt((item?.price ?? 0) * (quantityVal ?? 1)),
-  //       productId: item?._id || "",
-  //       userId: user?.userId || "Guest",
-  //     };
-  
-  //     console.log("Updated Cart Fields:", updatedCartFields);
-  
-  //     // 🔥 Optimistic UI update
-  //     setCartData((prevCartData) =>
-  //       prevCartData.map((cartItem) =>
-  //         cartItem._id === item._id
-  //           ? { ...cartItem, quantity: quantityVal, subTotal: parseInt((item?.price ?? 0) * (quantityVal ?? 1)) }
-  //           : cartItem
-  //       )
-  //     );
-  
-  //     // 🔥 Backend update
-  //     editData(`/cart/${item?._id}`, updatedCartFields)
-  //       .then(() => {
-  //         setIsLoading(false);
-  //         // optional: re-fetch cart if you want fully fresh data from server
-  //         // fetchDataFromApi(`/cart`).then((res) => setCartData(res));
-  //       })
-  //       .catch((error) => {
-  //         console.error("Error updating cart:", error);
-  //         setIsLoading(false);
-  //       });
-  //   }
-  // };
-  
-
   const removeItem=(id)=>{
   deleteData(`/cart/${id}`).then((res)=>{
     context.setAlertBox({
@@ -139,7 +98,7 @@ const Cart = () => {
       <div className="container mt-5">
         {/* Free Shipping Notice */}
         <div className="alert alert-light text-center">
-          Add <strong className="text-danger">$39.46</strong> to cart and get free shipping!
+          Add <strong className="text-danger">₹39.46</strong> to cart and get free shipping!
           <div className="progress mt-2">
             <div className="progress-bar bg-danger" style={{ width: "20%" }}></div>
           </div>
@@ -206,7 +165,7 @@ const Cart = () => {
 
               <div className="d-flex justify-content-between">
                 <p>Subtotal</p>
-                <p className="text-danger"> Rs.
+                <p className="text-danger"> ₹
                   {
                     cartData.length!==0 && cartData.map(item=>parseInt(item.price)*item.quantity).reduce((total,value)=>
                     total+value,0)
@@ -238,7 +197,7 @@ const Cart = () => {
 
               <div className="d-flex justify-content-between">
                 <h5>Total:</h5>
-                <h5 className="text-danger">Rs. 
+                <h5 className="text-danger">₹ 
                 {
                     cartData.length!==0 && cartData.map(item=>parseInt(item.price)*item.quantity).reduce((total,value)=>
                     total+value,0)
@@ -246,7 +205,7 @@ const Cart = () => {
                 </h5>
               </div>
 
-              <button className="btn btn-danger w-100 mt-3">Proceed to Checkout</button>
+             <Link to="/checkout"><button className="btn btn-danger w-100 mt-3">Proceed to Checkout &nbsp;<FaShoppingCart className='pb-1 text-2xl"'/></button></Link> 
             </div>
           </div>
         </div>

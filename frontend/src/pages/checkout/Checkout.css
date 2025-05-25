@@ -1,0 +1,17 @@
+.checkoutform .form-group{
+    margin-bottom: 20px;
+}
+.checkoutform .form-group input,
+.checkoutform .form-group .inps
+{
+    background-color: rgb(252, 251, 251);
+}
+
+.orderinfo{
+    background: #a09c9c;
+    padding: 25px;
+}
+.orderinfo thead{
+    border-top:1px solid rgba(0,0,0,0.1) !important;
+    border-bottom: 1px solid rgba(0,0,0,0.1) !important;
+}
