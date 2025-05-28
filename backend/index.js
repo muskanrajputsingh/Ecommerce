@@ -25,6 +25,10 @@ const userRoute = require('./routes/User');
 const cartRoute = require('./routes/cart');
 const searchRoute = require('./routes/search')
 
+app.get("/get", (req, res) => {
+    res.json({ message: "Direct GET route on /get is working!" });
+  });  
+
 app.use('/api', categoryRoutes);
 app.use('/api', productRoute);
 app.use('/api', subCatRoute);
