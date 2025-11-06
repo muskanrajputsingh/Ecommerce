@@ -15,10 +15,10 @@ const Card = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
   const [value, setValue] = useState(0);
   const [catData, setCatData] = useState([]);
-  const [selectedCat, setSelectedCat] = useState("Winter Wear");
+  const [selectedCat, setSelectedCat] = useState("bottom Wear");
   const [filterData, setFilterData] = useState([]);
 
-  // ✅ Fetch Categories
+  // Fetch Categories
   // useEffect(() => {
   //   fetchDataFromApi("/category?all=true")
   //     .then((res) => {
@@ -34,7 +34,7 @@ const Card = () => {
         console.log("Category API Response:", res);
   
         if (res?.categoryList) {
-          // ✅ Remove duplicate categories based on `name`
+          // Remove duplicate categories based on `name`
           const uniqueCategories = Array.from(new Set(res.categoryList.map(cat => cat.name)))
             .map(name => res.categoryList.find(cat => cat.name === name));
   
@@ -45,7 +45,7 @@ const Card = () => {
   }, []);
   
 
-  // ✅ Fetch Featured Products
+  // Fetch Featured Products
   useEffect(() => {
     fetchDataFromApi("/featured")
       .then((res) => {
@@ -62,7 +62,7 @@ const Card = () => {
   }, []);
   
 
-  // ✅ Fetch Products for Selected Category
+  // Fetch Products for Selected Category
   useEffect(() => {
     if (selectedCat) {
       console.log("Fetching products for category:",selectedCat);
@@ -79,7 +79,7 @@ const Card = () => {
     }
   }, [selectedCat]);
 
-  // ✅ Fetch All Products
+  // Fetch All Products
   useEffect(() => {
     fetchDataFromApi("/product?perPage=12")
       .then((productRes) => {
@@ -89,7 +89,7 @@ const Card = () => {
       .catch((err) => console.error("Error fetching all products:", err));
   }, []);
 
-  // ✅ Tab Change Handler
+  //  Tab Change Handler
   const handleChange = (_, newValue) => {
     setValue(newValue);
     setSelectedCat(catData[newValue]?.name || "");
@@ -99,7 +99,7 @@ const Card = () => {
     <div className="homeProducts my-4">
       <div className="container">
         <div className="row">
-          {/* ✅ Banner Section */}
+          {/*  Banner Section */}
           <div className="col-md-3">
             <div className="sticky">
               <div className="banner">

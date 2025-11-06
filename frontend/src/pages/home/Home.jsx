@@ -18,7 +18,6 @@ const Home = () => {
     <>
       <Caraousel/>
       <DressCat /><br />
-      {/* <Marque /><br/> */}
       <Hero /><br />
       <Category />
       <FilterCat />
