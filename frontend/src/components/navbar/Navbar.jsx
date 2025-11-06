@@ -62,7 +62,7 @@ import { useNavigate } from "react-router-dom";
 const fetchSubCategories = async () => {
     try {
         const res = await fetchDataFromApi("/subcategory?all=true");
-        console.log("Subcategories API Response:", res); // 🔍 Debugging
+        console.log("Subcategories API Response:", res); // Debugging
 
         if (res && Array.isArray(res.subCategoryList)) {
             setSubCategories(res.subCategoryList);

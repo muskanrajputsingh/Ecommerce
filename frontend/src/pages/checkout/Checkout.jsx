@@ -5,13 +5,15 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import { FaShoppingCart } from "react-icons/fa";
-import { fetchDataFromApi } from '../../utils/api';
+import { fetchDataFromApi ,postData} from '../../utils/api';
 import './Checkout.css';
 import { MyContext } from '../../App';
 
 const Checkout = () => {
     const [countries, setCountries] = useState([]);
     const [cartData, setCartData] = useState([]); 
+    const [isProcessing, setIsProcessing] = useState(false);
+
    const context = useContext(MyContext);
 
     useEffect(() => {
@@ -21,12 +23,12 @@ const Checkout = () => {
             if (Array.isArray(res)) {
               setCartData(res);
             } else {
-              setCartData([]); // ✅ Fallback if data is not an array
+              setCartData([]); 
             }
           })
           .catch(error => {
             console.error("Error fetching cart data:", error);
-            setCartData([]); // ✅ Ensuring the app does not crash
+            setCartData([]); 
           });
       }, []);
 
@@ -48,20 +50,6 @@ const Checkout = () => {
             [e.target.name]:e.target.value
         })
     }
-
-    // useEffect(() => {
-    //     fetch('https://restcountries.com/v2/all')
-    //       .then((response) => response.json())
-    //       .then((data) => {
-    //         if (data && Array.isArray(data)) {
-    //           setCountries(data);
-    //         //   console.log(data);
-    //         }
-    //       })
-    //       .catch((error) => {
-    //         console.error('Error fetching countries:', error);
-    //       });
-    //   }, []);
 
       const checkout=(e)=>{
       e.preventDefault();
@@ -147,6 +135,146 @@ const Checkout = () => {
      }
 
       }
+
+  const loadRazorpayScript = () => {
+  return new Promise((resolve) => {
+    if (window.Razorpay) {
+      resolve(true);
+      return;
+    }
+    const script = document.createElement("script");
+    script.src = "https://checkout.razorpay.com/v1/checkout.js";
+    script.onload = () => resolve(true);
+    script.onerror = () => resolve(false);
+    document.body.appendChild(script);
+  });
+};
+
+const handleCheckout = async (e) => {
+  e.preventDefault();
+
+  // Validate billing form first
+  const requiredFields = [
+    { key: "fullname", label: "Full Name" },
+    { key: "country", label: "Country" },
+    { key: "streetAddressLine1", label: "Street Address" },
+    { key: "state", label: "State" },
+    { key: "city", label: "City" },
+    { key: "zipcode", label: "Zipcode" },
+    { key: "phone", label: "Phone Number" },
+    { key: "email", label: "Email Address" },
+  ];
+
+  for (let field of requiredFields) {
+    if (!formfields[field.key]?.trim()) {
+      context.setAlertBox({
+        open: true,
+        error: true,
+        msg: `Please enter ${field.label}`,
+      });
+      return;
+    }
+  }
+
+  // Proceed only if form is valid
+  try {
+    setIsProcessing(true);
+
+    // Load Razorpay SDK
+    const isLoaded = await loadRazorpayScript();
+    if (!isLoaded) {
+      context.setAlertBox({
+        open: true,
+        error: true,
+        msg: "Failed to load Razorpay SDK. Check your internet connection.",
+      });
+      setIsProcessing(false);
+      return;
+    }
+
+    // Calculate total from cart data
+    const total = cartData.length
+      ? cartData
+          .map((item) => parseInt(item.price) * item.quantity)
+          .reduce((sum, val) => sum + val, 0)
+      : 0;
+
+    if (total === 0) {
+      context.setAlertBox({
+        open: true,
+        error: true,
+        msg: "Your cart is empty!",
+      });
+      setIsProcessing(false);
+      return;
+    }
+
+    // Create order in backend
+    const orderData = await postData("/payment/order", { amount: Math.round(total * 100) });
+    const order = orderData.data;
+
+    const options = {
+      key: import.meta.env.VITE_RAZORPAY_KEY_ID,
+      amount: order.amount,
+      currency: order.currency,
+      name: "Fashion Nova",
+      description: "E-commerce Payment",
+      order_id: order.id,
+      handler: async (response) => {
+        setIsProcessing(false);
+        const verifyRes = await postData("/payment/verify", {
+          razorpay_order_id: response.razorpay_order_id,
+          razorpay_payment_id: response.razorpay_payment_id,
+          razorpay_signature: response.razorpay_signature,
+        });
+
+        if (verifyRes.message === "Payment Successful") {
+          context.setAlertBox({
+            open: true,
+            error: false,
+            msg: "Payment Successful!",
+          });
+        } else {
+          context.setAlertBox({
+            open: true,
+            error: true,
+            msg: "Payment verification failed!",
+          });
+        }
+      },
+      prefill: {
+        name: formfields.fullname,
+        email: formfields.email,
+        contact: formfields.phone,
+      },
+      theme: {
+        color: "#eddcd0",
+      },
+    };
+
+    const razor = new window.Razorpay(options);
+    razor.open();
+
+    razor.on("payment.failed", () => {
+      setIsProcessing(false);
+      context.setAlertBox({
+        open: true,
+        error: true,
+        msg: "Payment failed! Please try again.",
+      });
+    });
+  } catch (error) {
+    console.error("Error in payment:", error);
+    context.setAlertBox({
+      open: true,
+      error: true,
+      msg: "Something went wrong during checkout!",
+    });
+    setIsProcessing(false);
+  }
+};
+
+
 
   return (
     <>
@@ -286,7 +414,7 @@ const Checkout = () => {
 
             <tr>
                 <td>Subtotal</td>
-                <td>Total amount to pay 💵</td>
+                <td>Total amount to pay </td>
                 <td> ₹ {
                     cartData.length!==0 && cartData.map(item=>parseInt(item.price)*item.quantity).reduce((total,value)=>
                     total+value,0)
@@ -298,7 +426,24 @@ const Checkout = () => {
             </table>
          </div>
    
-         <button type='submit' className="btn btn-danger w-100 mt-3"> Checkout &nbsp;<FaShoppingCart className='pb-1 text-2xl"'/></button>
+        <button
+          type="button"
+          className="btn btn-danger w-100 mt-3 flex items-center justify-center gap-2"
+          onClick={handleCheckout}
+          disabled={isProcessing} // disable button during processing
+        >
+          {isProcessing ? (
+            <>
+              Processing Checkout...
+               <span className="spinner"></span>
+            </>
+          ) : (
+            <>
+              Checkout &nbsp;
+              <FaShoppingCart className="pb-1 text-2xl" />
+            </>
+          )}
+        </button>
 
         </div>
        </div>

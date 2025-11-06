@@ -5,9 +5,6 @@ const cors = require('cors');
 require('dotenv/config');
 require('./db/conection');
 
-// Import JWT middleware function
-// const authJwt = require('./helper/jwt');
-
 app.use(cors());
 app.options('*', cors());
 
@@ -23,7 +20,8 @@ const productRoute = require('./routes/product');
 const subCatRoute = require('./routes/subCat');
 const userRoute = require('./routes/User');
 const cartRoute = require('./routes/cart');
-const searchRoute = require('./routes/search')
+const searchRoute = require('./routes/search');
+const paymentRoute = require('./routes/payment');
 
 app.get("/get", (req, res) => {
     res.json({ message: "Direct GET route on /get is working!" });
@@ -35,6 +33,7 @@ app.use('/api', subCatRoute);
 app.use('/api/user', userRoute);
 app.use('/api/cart',cartRoute);
 app.use('/api',searchRoute);
+app.use('/api/payment',paymentRoute);
 
 const PORT = process.env.PORT || 12000;
 app.listen(PORT, () => {
