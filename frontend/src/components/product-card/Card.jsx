@@ -15,18 +15,8 @@ const Card = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
   const [value, setValue] = useState(0);
   const [catData, setCatData] = useState([]);
-  const [selectedCat, setSelectedCat] = useState("bottom Wear");
+  const [selectedCat, setSelectedCat] = useState("Bottom Wear");
   const [filterData, setFilterData] = useState([]);
-
-  // Fetch Categories
-  // useEffect(() => {
-  //   fetchDataFromApi("/category?all=true")
-  //     .then((res) => {
-  //       console.log("Category API Response:", res);
-  //       setCatData(res?.categoryList || []);
-  //     })
-  //     .catch((err) => console.error("Error fetching categories:", err));
-  // }, []);
 
   useEffect(() => {
     fetchDataFromApi("/category?all=true")
@@ -123,7 +113,7 @@ const Card = () => {
             </div>
           </div>
 
-          {/* ✅ Product Section */}
+          {/*  Product Section */}
           <div className="col-md-9 productRow">
             <div className="d-flex align-items-center">
               <div className="info w-75">
@@ -135,7 +125,7 @@ const Card = () => {
               </button>
             </div>
 
-            {/* ✅ Swiper for Featured Products */}
+            {/*  Swiper for Featured Products */}
             <div className="product_row w-100 mt-4">
           {featuredProducts.length > 0 ? (
             <Swiper slidesPerView={3} spaceBetween={20} navigation={true} modules={[Navigation]} className="mySwiper">
@@ -151,7 +141,7 @@ const Card = () => {
         </div>
 
 
-            {/* ✅ Category Tabs */}
+            {/*  Category Tabs */}
             <div className="d-flex align-items-center mt-5">
               <div className="info w-75">
                 <h3 className="mb-0 hd">NEW PRODUCTS</h3>
@@ -167,7 +157,7 @@ const Card = () => {
               </Tabs>
             </div>
 
-            {/* ✅ Display Filtered Products */}
+            {/*  Display Filtered Products */}
             <div className="product_row productRow2 w-100 mt-4 d-flex">
               {filterData.length > 0 ? (
                 filterData.map((item) => <CardItem item={item} key={item._id} />)
