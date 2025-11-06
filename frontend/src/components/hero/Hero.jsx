@@ -15,20 +15,20 @@ const Hero = () => {
       <div className="homeBannerSection my-3">
       <Slider {...settings}>
       <div className='item'>
-        <img src="https://images.bestsellerclothing.in/live/image/catalog/brandstore/bestseller/banners/ol_chillszn_web_30102024.jpg?width=1920&height=760&mode=fill&fill=blur&format=auto" className='w-100' alt="" />
+        <img src="https://www.only.in/cdn/shop/files/CHL_SZN-2400X950.png?v=1760346193&width=2400" className='w-100' height="580px" alt="" />
       </div>
       <div className='item'>
-        <img src="https://images.bestsellerclothing.in/live/image/catalog/brandstore/bestseller/banners/ol_paintone_web_17122024.jpg" className='w-100' height="580px" alt="" />
+        <img src="https://www.only.in/cdn/shop/files/2400x950px-Only-Denim-HP-Desktop.jpg?v=1756902162&width=2400" className='w-100' alt="" />
       </div>
       <div className='item'>
-        <img src="https://images.bestsellerclothing.in/live/image/catalog/brandstore/bestseller/banners/ol_2400x950pxOnlySaleUpto50-kotak-HP_13122024.jpg?width=1920&height=760&mode=fill&fill=blur&format=auto" className='w-100' alt="" />
-      </div>
-      <div className='item'>
-        <img src="https://images.bestsellerclothing.in/live/image/catalog/brandstore/bestseller/banners/ol_denim_web_14082024.jpg?width=1920&height=760&mode=fill&fill=blur&format=auto" className='w-100' alt="" />
+        <img src="https://www.only.in/cdn/shop/files/1800-x-600px_Only_Autumm-Desktop.jpg?v=1754457895&width=1800" className='w-100' alt="" />
       </div>
       <div className="item">
-          <img src="https://images.pexels.com/photos/1942880/pexels-photo-1942880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" className='w-100' height="580px" alt="" />
+          <img src="https://www.only.in/cdn/shop/files/2400x950px-Only-CRM-Concert-Ready-Fits-HP-Desktop_2.jpg?v=1760599309&width=2400" className='w-100' height="580px" alt="" />
         </div>
+        <div className='item'>
+        <img src="" className='w-100' alt="" />
+      </div>
       </Slider>
       </div>
     </>

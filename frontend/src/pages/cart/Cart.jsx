@@ -8,9 +8,9 @@ import { FaShoppingCart } from "react-icons/fa";
 import { deleteData, editData, fetchDataFromApi } from "../../utils/api";
 
 const Cart = () => {
-  const [cartData, setCartData] = useState([]); 
   const [productQuantity, setProductQuantity] = useState();
   const context = useContext(MyContext);
+  const { cartData, setCartData, setAlertBox } = useContext(MyContext);
   const [isLoading, setIsLoading] = useState(false);
    const [changeQuantity,setChangeQuantity] = useState(0);
    const [selectedQunatity,setSelectedQuantity]=useState();
@@ -80,18 +80,25 @@ const Cart = () => {
     }
   };
 
-  const removeItem=(id)=>{
-  deleteData(`/cart/${id}`).then((res)=>{
-    context.setAlertBox({
-      open:true,
-      error:false,
-      msg:"item removed from cart!"
+const removeItem = (id) => {
+  const updatedCart = cartData.filter((item) => item._id !== id);
+  setCartData(updatedCart);
+
+  // Call API to delete item
+  deleteData(`/cart/${id}`)
+    .then((res) => {
+      setAlertBox({
+        open: true,
+        error: false,
+        msg: "Item removed from cart!",
+      });
     })
-    fetchDataFromApi(`/cart`).then((res)=>{
-      setCartData(res);
-    })
-  })
-  } 
+    .catch((err) => {
+      console.error("Error deleting item:", err);
+      fetchDataFromApi(`/cart`).then((res) => setCartData(res));
+    });
+};
+
 
   return (
     <>

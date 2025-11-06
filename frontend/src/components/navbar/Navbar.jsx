@@ -17,11 +17,11 @@ import { useNavigate } from "react-router-dom";
 
   const Navbar = () => {
 
-    const [categories, setCategories] = useState([]);      // ✅ Always starts as an array
-    const [subCategories, setSubCategories] = useState([]); // ✅ Always starts as an array
+    const [categories, setCategories] = useState([]);      
+    const [subCategories, setSubCategories] = useState([]); 
     const [anchorEl, setAnchorEl] = useState(null);
-    const [cartData, setCartData] = useState([]);
     const context = useContext(MyContext);
+    const { cartData, setCartData } = useContext(MyContext);
     const navigate = useNavigate();
     const [searchFields,setSearchFields]=useState("");
 
@@ -81,50 +81,9 @@ const logout=()=>{
   window.location.href="/login"
 }
 
-// useEffect(() => {
-//   fetchDataFromApi('/cart')
-//     .then((res) => {
-//       console.log("Updated Cart Data:", res);
-//       if (Array.isArray(res)) {
-//         setCartData(res);
-//       } else {
-//         setCartData([]);
-//       }
-//     })
-//     .catch(error => {
-//       console.error("Error fetching cart data:", error);
-//       setCartData([]);
-//     });
-// }, [cartData]);  
-
-//searching
-
-useEffect(() => {
-  fetchDataFromApi('/cart')
-    .then((res) => {
-      if (Array.isArray(res)) {
-        setCartData(res);
-      } else {
-        setCartData([]);
-      }
-    })
-    .catch(error => {
-      console.error("Error fetching cart data:", error);
-      setCartData([]);
-    });
-}, []);  // ✅ empty dependency array
-
-
 const onChangeValue=(e)=>{
   setSearchFields(e.target.value);
 }
-
-// const searchProducts=()=>{
-//   fetchDataFromApi(`/search?q=${searchFields}`).then((res)=>{
-//    context.setSearchData(res);
-//    navigate("/search");
-//   })
-// }
 
 const searchProducts = () => {
   const categoryMatch = categories.find(cat =>
@@ -141,9 +100,6 @@ const searchProducts = () => {
   }
 
   if (categoryMatch) {
-    // Optionally navigate to a category page or fetch products by category ID
-    // navigate(`/category/${categoryMatch._id}`);
-    // OR: fetch products by categoryId
   } else {
     fetchDataFromApi(`/search?q=${searchFields}`).then((res) => {
       context.setSearchData(res);
@@ -254,18 +210,6 @@ const searchProducts = () => {
           <Avatar /> My account
         </MenuItem>
         <Divider />
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-          <IoBagCheckSharp/>
-          </ListItemIcon>
-          My Orders
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-          <IoMdHeart />
-          </ListItemIcon>
-          My List
-        </MenuItem>
         <MenuItem onClick={logout}>
           <ListItemIcon>
             <Logout fontSize="5px" />

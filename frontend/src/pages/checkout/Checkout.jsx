@@ -32,7 +32,7 @@ const Checkout = () => {
 
     const [formfields,setFormfields]=useState({
         fullname:"",
-        country:"",
+        country:"INDIA",
         streetAddressLine1:"",
         streetAddressLine2:"",
         state:"",
@@ -49,19 +49,19 @@ const Checkout = () => {
         })
     }
 
-    useEffect(() => {
-        fetch('https://restcountries.com/v2/all')
-          .then((response) => response.json())
-          .then((data) => {
-            if (data && Array.isArray(data)) {
-              setCountries(data);
-            //   console.log(data);
-            }
-          })
-          .catch((error) => {
-            console.error('Error fetching countries:', error);
-          });
-      }, []);
+    // useEffect(() => {
+    //     fetch('https://restcountries.com/v2/all')
+    //       .then((response) => response.json())
+    //       .then((data) => {
+    //         if (data && Array.isArray(data)) {
+    //           setCountries(data);
+    //         //   console.log(data);
+    //         }
+    //       })
+    //       .catch((error) => {
+    //         console.error('Error fetching countries:', error);
+    //       });
+    //   }, []);
 
       const checkout=(e)=>{
       e.preventDefault();
@@ -155,7 +155,7 @@ const Checkout = () => {
         <form className='checkoutform' onSubmit={checkout}>
         <div className="row">
             <div className="col-md-7">
-                <h4 className='hd fw-800'>BILLING DETAILS</h4>
+                <h5 className='hd fw-800 py-2'>BILLING DETAILS</h5>
 
                 <div className="row mt-3">
                     <div className="col-md-6">
@@ -167,20 +167,27 @@ const Checkout = () => {
 
                     <div className="col-md-6">
                         <div className="form-group">
-                        <FormControl fullWidth className='inps'>
-                        <InputLabel  id="demo-simple-select-filled-label">Country *</InputLabel>
-                        <Select value={formfields.country} size='small' name="country" onChange={onChangeInput}
-                        >
-                        <MenuItem value="">
-                            <em>None</em>
-                        </MenuItem>
-                        {countries.map((c) => (
+                  <FormControl fullWidth className="inps">
+                  <InputLabel id="country-label">Country *</InputLabel>
+                  <Select
+                    labelId="country-label"
+                    name="country"
+                    value={formfields.country}
+                    onChange={onChangeInput}
+                    size="small"
+                  >
+                    {countries.length > 0 ? (
+                      countries.map((c) => (
                         <MenuItem key={c.alpha2Code} value={c.name}>
-                        {c.name}
+                          {c.name}
                         </MenuItem>
-                        ))}
-                    </Select>
-                    </FormControl>
+                      ))
+                    ) : (
+                      <MenuItem value="INDIA">INDIA</MenuItem> // default fallback
+                    )}
+                  </Select>
+                </FormControl>
+
                         </div>
                     </div>
 
